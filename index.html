@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<style type="text/css">
+		.calculator {
+			height: 530px;
+			width: 400px;
+			margin: auto;
+			border: solid black 0.5px;
+			border-radius: 3px;
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 20px;
+			box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+			}
+		.button {
+			 background-color: lightgray;
+			 color: black;
+			 border: solid black 0.5px;
+			 width: 100%;
+			 border-radius: 4px;
+			 height: 70%;
+			font-size: 17px;
+			}
+	</style>
+</head>
+<body>
+	<table class = "calculator" >
+		<tr>
+			<td colspan="4"><input type = "textarea" id = "result" style = "background-color: white; color: black;height: 50px;width: 500px;" /></td>
+		</tr>
+ 		<tr>
+ 			<td> <input class = "button" type = "button" value = "(" onclick = "display('(')" /> </td>
+ 			<td> <input class = "button" type = "button" value = ")" onclick = "display(')')" /> </td>
+ 			<td> <input class = "button" type = "button" value = "%" onclick = "display('%')" /> </td>
+ 			<td> <input class = "button" type = "button" value = "AC" onclick = "clearScreen()" /> </td>
+		</tr>
+ 		<tr>
+			<td> <input class = "button" type = "button" value = "7" onclick = "display('7')" style = "background-color: whitesmoke;" /> </td>
+			<td> <input class = "button" type = "button" value = "8" onclick = "display('8')" style = "background-color: whitesmoke;" /> </td>
+			<td> <input class = "button" type = "button" value = "9" onclick = "display('9')" style = "background-color: whitesmoke;" /> </td>
+			<td> <input class = "button" type = "button" value = "/" onclick = "display('/')" /> </td>
+		</tr>
+		<tr>
+			<td> <input class = "button" type = "button" value = "4" onclick = "display('4')" style = "background-color: whitesmoke;"/> </td>
+			<td> <input class = "button" type = "button" value = "5" onclick = "display('5')" style = "background-color: whitesmoke;"/> </td>
+			<td> <input class = "button" type = "button" value = "6" onclick = "display('6')" style = "background-color: whitesmoke;"/> </td>
+			<td> <input class = "button" type = "button" value = "*" onclick = "display('*')" /> </td>
+		</tr>
+		<tr>
+			<td> <input class = "button" type = "button" value = "1" onclick = "display('1')" style = "background-color: whitesmoke;"/> </td>
+			<td> <input class = "button" type = "button" value = "2" onclick = "display('2')" style = "background-color: whitesmoke;"/> </td>
+			<td> <input class = "button" type = "button" value = "3" onclick = "display('3')" style = "background-color: whitesmoke;"/> </td>
+			<td> <input class = "button" type = "button" value = "-" onclick = "display('-')" /> </td>
+		</tr>
+		<tr>
+			<td> <input class = "button" type = "button" value = "0" onclick = "display('0')" style = "background-color: whitesmoke;"/> </td>
+			<td> <input class = "button" type = "button" value = "." onclick = "display('.')" style = "background-color: whitesmoke;"/> </td>
+			<td> <input class = "button" type = "button" value = "=" onclick = "calculate()" style = "background-color: #0474EA; color: black;" /> </td>
+			<td> <input class = "button" type = "button" value = "+" onclick = "display('+')" /> </td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function clearScreen() {
+	 document.getElementById("result").value = "";
+	}
+	function display(value) {
+	 document.getElementById("result").value += value;
+	}
+
+	function calculate() {
+	 var p = document.getElementById("result").value;
+	 var q = eval(p);
+	 document.getElementById("result").value = q;
+	}
+	</script>
+</body>
+</html>
